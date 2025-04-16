@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        #initial-page {
+            text-align: center;
+        }
+
+        #content-page {
+            display: none;
+            text-align: center;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background: linear-gradient(45deg, #ff0000, #ff6b6b);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        .finger {
+            font-size: 80px;
+            animation: bounce 1s infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .name {
+            font-size: 32px;
+            margin: 20px 0;
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <div id="initial-page">
+        <button class="button" onclick="showContent()">BUKA YAA!!!</button>
+    </div>
+
+    <div id="content-page">
+        <div class="name">WIDI<br>KONTOOOLL!!!!</div>
+        <div class="finger">🖕</div>
+    </div>
+
+    <script>
+        function showContent() {
+            document.getElementById('initial-page').style.display = 'none';
+            document.getElementById('content-page').style.display = 'block';
+            
+            // Tambahkan efek suara (opsional)
+            const audio = new Audio('https://assets.mixkit.co/active_storage/sfx/257/257-preview.mp3');
+            audio.play();
+        }
+    </script>
+</body>
+</html>
